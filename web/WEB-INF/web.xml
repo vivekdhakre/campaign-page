@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+
+	<!--<servlet>-->
+		<!--<servlet-name>pediasure400</servlet-name>-->
+		<!--<jsp-file>/pediasure400.jsp</jsp-file>-->
+	<!--</servlet>-->
+	<!--<servlet-mapping>-->
+		<!--<servlet-name>pediasure400</servlet-name>-->
+		<!--<url-pattern>/pediasure400</url-pattern>-->
+	<!--</servlet-mapping>-->
+
+	<servlet>
+		<servlet-name>JuddsChemist</servlet-name>
+		<jsp-file>/juddschemist.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JuddsChemist</servlet-name>
+		<url-pattern>/juddschemist</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>YellowChilli</servlet-name>
+		<jsp-file>/yellowchilli.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>YellowChilli</servlet-name>
+		<url-pattern>/yellowchilli</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Index</servlet-name>
+		<jsp-file>/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Index</servlet-name>
+		<url-pattern>/offer</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>branchoffer</servlet-name>
+		<jsp-file>/branchoffer.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>branchoffer</servlet-name>
+		<url-pattern>/bo</url-pattern>
+	</servlet-mapping>
+
+	<!-- 	welcome file  -->
+
+	<!--<welcome-file-list>-->
+	    <!--<welcome-file>index.jsp</welcome-file>-->
+	<!--</welcome-file-list>-->
+		
+</web-app>

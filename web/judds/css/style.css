@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/material-icon/fonts.woff2") format("woff2");
+}
+@font-face {
+    font-family: 'roboto';
+    src: url("../fonts/roboto/Roboto-Thin.eot");
+    src: url("../fonts/roboto/Roboto-Thin.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../fonts/roboto/Roboto-Thin.woff2?v=4.6.1") format("woff2"), url("../fonts/roboto/Roboto-Thin.woff") format("woff"), url("../fonts/iconfont/Roboto-Thin.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'roboto';
+    src: url("../fonts/roboto/Roboto-Light.eot");
+    src: url("../fonts/roboto/Roboto-light.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../fonts/roboto/Roboto-Light.woff2?v=4.6.1") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff"), url("../fonts/iconfont/Roboto-Light.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'roboto';
+    src: url("../fonts/roboto/Roboto-Regular.eot");
+    src: url("../fonts/roboto/Roboto-Regular.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../fonts/roboto/Roboto-Regular.woff2?v=4.6.1") format("woff2"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"), url("../fonts/iconfont/Roboto-Regular.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'roboto';
+    src: url("../fonts/roboto/Roboto-Medium.eot");
+    src: url("../fonts/roboto/Roboto-Medium.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../fonts/roboto/Roboto-Medium.woff2?v=4.6.1") format("woff2"), url("../fonts/roboto/Roboto-Medium.woff") format("woff"), url("../fonts/iconfont/Roboto-Medium.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'roboto';
+    src: url("../fonts/roboto/Roboto-Bold.eot");
+    src: url("../fonts/roboto/Roboto-Bold.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../fonts/roboto/Roboto-Bold.woff2?v=4.6.1") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"), url("../fonts/iconfont/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal; }
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
+html {
+    font-family: "roboto" !important; }
+
+::selection {
+    background: transparent !important;
+    text-shadow: none;
+}
+body
+{
+    overflow: hidden;
+    margin: 0;
+}
+.container {
+    width: 100%;
+    max-width: 1232px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: auto;
+}
+.brand-header.mdl-layout__header
+{
+    border-bottom:1px solid #E91E63 !important;
+    padding:0 20px;
+    text-align:center;
+    z-index:99 !important;
+    background-color: #ec008c !important;
+    min-height: 40px !important;
+}
+.brand-header .mdl-layout__header-row
+{
+    height:40px;
+    padding-left: 0;
+}
+.brand-header span
+{
+    float: left;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: .4px;
+}
+.offer-image {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.offer-container
+{
+    float: left;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.offer-container img
+{
+    width: 100%;
+}
+.coupon-code-container
+{
+    float: left;
+    width: 100%;
+}
+.coupon-code-section
+{
+    max-width: 450px;
+    border: 2px solid #818285;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 20px 10% 0;
+    text-align:center;
+}
+.code-section
+{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coupon-code
+{
+    border: 1px dashed #818285;
+    letter-spacing: .5px;
+    font-size: 22px !important;
+    color: #ec008c;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    max-width: 200px;
+    width: 100%;
+    text-align: center;
+}
+.code-head h5
+{
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    color: #3a3a3c;
+    line-height: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px !important;
+}
+.brand-details
+{
+    float: left;
+    width: 100%;
+    margin: 6px 0;
+}
+.brand-address,
+.telephone-section
+{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.brand-details .call-number,
+.brand-details .address
+{
+    float: right;
+    text-align: right;
+    color: #6d6d6d;
+}
+.brand-details i
+{
+    color: gray;
+}
+.mdl-typography--text-center {
+    text-align: center !important;
+}
+.address
+{
+    margin-bottom: 6px;
+}
+.offer-description {
+    position: absolute;
+    z-index: 9;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 25px;
+    padding: 15px 10px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 16px;
+}
+.mdl-tabs {
+    display: block;
+    width: 100%;
+    position: relative;
+    float: left;
+}
+.customAlert {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(134, 134, 134, 0.75);
+}
+
+.mdl-tabs__panel.always-active{
+    display:block !important;
+}

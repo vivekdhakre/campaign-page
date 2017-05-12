@@ -1,0 +1,1139 @@
+@charset "utf-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+    max-width: 100%;
+}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+    width:100%;
+}
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+
+/* Mobile Layout: 480px and below. */
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    /*padding-left: 1.82%;
+    padding-right: 1.82%;*/
+}
+#LayoutDiv1 {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+}
+#logo-itc
+{
+    float:left;
+    position:relative;
+    width:45%;
+    padding:5px;
+}
+#logo-uahoy
+{
+    float:right;
+    position:relative;
+    width:45%;
+    padding:5px;
+}
+#header
+{
+    width:100%;
+    background-color:#CCC;
+    float:left;
+    position:relative;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #ffffff), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#e5e5e5', GradientType=0 ); /* IE6-9 */
+    margin-bottom:5px;
+}
+
+#bg
+{
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid #fd780f;
+    box-shadow: 1px 1px 1px #fd780f;
+    position:relative;
+    float:left;
+}
+
+#LayoutDiv2
+{
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    margin-top:5px;
+}
+#call
+{
+    width: 100%;
+    float:left;
+    background: #0F269C;
+    margin:0 auto;
+    border: 1px #0F269C;
+    border-radius: 25px;
+}
+
+
+#fiama-image1
+{
+    float:left;
+    width:45%;
+    padding:5px;
+}
+#fiama-image2
+{
+    float:right;
+    width:45%;
+    padding:5px;
+}
+#call-icon
+{
+    float:left;
+    padding:10px;
+    width:10%;
+
+}
+/*#call-icon img
+{
+	width:10%;
+}*/
+#click2call
+{
+    float:left;
+    font-family: helvetica;
+    position: relative;
+    /*margin-left: 23px;*/
+    /* text-align: center; */
+    text-shadow: 1px 1px 1px rgba(88, 88, 88, 1);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+#click2call a
+{
+    text-decoration:none;
+    color:white;
+
+}
+
+#detail
+{
+    float:left;
+    font-family: helvetica;
+    position: relative;
+    margin-left: 23px;
+    /* text-align: center; */
+    text-shadow: 1px 1px 1px rgba(88, 88, 88, 1);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+#LayoutDiv3
+{
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    margin-top:5px;
+}
+#redeem
+{
+    width:100%;
+    float:left;
+    background:rgb(50, 92, 255);
+    margin:0 auto;
+
+}
+#coupon-code
+{
+    text-align:center;
+    font-size: 20px;
+    line-height: 25px;
+    width: 50%;
+    margin: 0 auto;
+    text-shadow: 1px 1px 1px gray;
+    font-family: helvetica neue;
+    padding: 5px;
+}
+#coupon-icon
+{
+    float:left;
+    width:12%;
+    padding:10px;
+
+}
+#click2redeem
+{
+    float:left;
+    font-family: helvetica;
+    position: relative;
+    margin-left: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(49, 49, 49, 1);
+    color: rgb(255, 255, 255);
+    line-height: 15px;
+}
+#coupon-code1
+{
+    text-align:center;
+    font-size: 20px;
+    line-height: 25px;
+    width: 50%;
+    margin: 0 auto;
+    text-shadow: 1px 1px 1px gray;
+    font-family: helvetica neue;
+    padding: 5px;
+    background:#3C9;
+
+}
+#LayoutDiv4
+{
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    margin-bottom:10px;
+}
+
+#ins
+{
+    float: left;
+    width: 100%;
+    background: #E46A0A;
+    border: 1px #E46A0A;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+#ins span
+{
+    line-height: 0px;
+    font-size: 20px;
+    font-family: arial;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 0px gray;
+    float:left;
+    text-align: center;
+}
+
+#ins_detail
+{
+    float: left;
+    width: 100%;
+    background: #0F269C;
+    border: 1px #0F269C;
+    border-radius: 25px;
+    text-align: center;
+}
+#ins_detail span
+{
+    line-height: 0px;
+    font-size: 20px;
+    font-family: arial;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 0px gray;
+    float:left;
+    text-align: center;
+}
+
+
+
+#LayoutDiv5
+{
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+}
+.footer {
+    float:left;
+    width:96%;
+    padding:5px 2%;
+    background:#eee;
+    color:#555;
+    font-size:11px;
+}
+.footer a {
+    color:#00F;
+}
+.footer span {
+    font-size:12px;
+}
+.about-us {
+    float:left;
+    width:96%;
+    padding:5px 2%;
+}
+.about-us h2 {
+    font:bold 16px/30px Arial, Helvetica, sans-serif;
+    color:#000;
+    background:#f5f5f5;
+    padding:3px 10px;
+    margin:0;
+    text-transform:capitalize;
+}
+.about-us p {
+    font:normal 12px/18px Arial, Helvetica, sans-serif;
+    text-align:justify;
+    color:#333;
+    margin:0;
+    padding:6px 0;
+}
+#instruction
+{
+    /*list-style-type:disc;*/
+    font-family:helvetica;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 25px;
+    float:left;
+    text-align: justify;
+    padding-right: 15px;
+}
+/*#input-text
+{
+	line-height: 20px;
+    font-size: 14px;
+    padding: 5px;
+    width: 95%;
+    font-family: verdana;
+	border-radius:10px;
+}*/
+
+#inputMsisdn,#inputotp,#inputcoupon
+{
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px;
+    width: 95%;
+    font-family: verdana;
+    border-radius:10px;
+}
+
+#inputEmail
+{
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px;
+    width: 95%;
+    font-family: verdana;
+    border-radius:10px;
+}
+#submit,#submit-otp
+{
+    background: #34a547;
+    font-size: 20px;
+    font-family: helvetica neue;
+    line-height: 20px;
+    padding: 5px;
+    border: 1px solid #34a547;
+    box-shadow: 1px 1px 1px #7d7d7d;
+    color: white;
+    text-shadow: 1px 1px #34a547;
+    border-radius:10px;
+}
+#dropdown
+{
+    font-size: 15px;
+    padding: 5px;
+    font-family: verdana;
+    font-weight: 600;
+    background: rgba(144, 179, 180, 0.54);
+    color: white;
+    text-shadow: 1px 1px rgb(65, 65, 65);
+    border: 1px solid #5F9EA0;
+    border-radius:10px;
+}
+
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+    .gridContainer {
+        width: 90.675%;
+        padding-left: 1.1625%;
+        padding-right: 1.1625%;
+    }
+    #LayoutDiv1 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #logo-itc
+    {
+        float:left;
+        position:relative;
+        width:45%;
+        padding:5px;
+    }
+    #logo-uahoy
+    {
+        float:right;
+        position:relative;
+        width:45%;
+        padding:5px;
+    }
+    #header
+    {
+        width:100%;
+        background-color:#CCC;
+        float:left;
+        position:relative;
+        background: #ffffff; /* Old browsers */
+        background: -moz-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #ffffff), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#e5e5e5', GradientType=0 ); /* IE6-9 */
+        margin-bottom:5px;
+    }
+    #bg-container
+    {
+        width:50%;
+        margin:0 auto;
+    }
+
+    #bg
+    {
+        width: 100%;
+        margin: 0 auto;
+        border: 2px solid #fd780f;
+        box-shadow: 1px 1px 1px #fd780f;
+        position:relative;
+        float:left;
+    }
+
+    #LayoutDiv2
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        margin-top:5px;
+    }
+    #call
+    {
+        width: 100%;
+        float:left;
+        background: #0F269C;
+        margin:0 auto;
+        border: 1px #0F269C;
+        border-radius: 25px;
+
+    }
+
+
+    #fiama-image1
+    {
+        float:left;
+        width:45%;
+        padding:5px;
+    }
+    #fiama-image2
+    {
+        float:right;
+        width:45%;
+        padding:5px;
+    }
+    #call-icon
+    {
+        float:left;
+        padding:10px;
+        width:10%;
+
+    }
+    /*#call-icon img
+    {
+        width:10%;
+    }*/
+    #click2call
+    {
+        float:left;
+        font-family: helvetica;
+        position: relative;
+
+        text-shadow: 1px 1px 1px rgba(88, 88, 88, 1);
+        color: rgb(236, 24, 24);
+        line-height: 15px;
+    }
+    #click2call a
+    {
+        text-decoration:none;
+        color:white;
+
+    }
+
+    #LayoutDiv3
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #redeem
+    {
+        width:100%;
+        float:left;
+        background:rgb(50, 92, 255);
+        margin:0 auto;
+
+    }
+    #coupon-icon
+    {
+        float:left;
+        width:12%;
+        padding:10px;
+
+    }
+    #click2redeem
+    {
+        float:left;
+        font-family: helvetica;
+        position: relative;
+        margin-left: 5px;
+        text-align: center;
+        text-shadow: 1px 1px 1px rgba(49, 49, 49, 1);
+        color: rgb(255, 255, 255);
+        line-height: 15px;
+    }
+    #LayoutDiv4
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #LayoutDiv5
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #ins span
+    {
+        line-height: 0px;
+        font-size: 20px;
+        font-family: arial;
+        font-variant: small-caps;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 0px gray;
+        float:left;
+        text-align: center;
+    }
+    #instruction
+    {
+        list-style-type:disc;
+        font-family:helvetica;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 25px;
+        float:left;
+        text-align: justify;
+        padding-right: 15px;
+    }
+
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+    .gridContainer {
+        width: 88.2%;
+        max-width: 1232px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;
+        margin: auto;
+    }
+    #LayoutDiv1 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #logo-itc
+    {
+        float:left;
+        position:relative;
+        width:45%;
+        padding:5px;
+    }
+    #logo-uahoy
+    {
+        float:right;
+        position:relative;
+        width:45%;
+        padding:5px;
+    }
+    #header
+    {
+        width:100%;
+        background-color:#CCC;
+        float:left;
+        position:relative;
+        background: #ffffff; /* Old browsers */
+        background: -moz-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #ffffff), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#e5e5e5', GradientType=0 ); /* IE6-9 */
+        margin-bottom:5px;
+    }
+    #bg-container
+    {
+        width:30%;
+        margin:0 auto;
+    }
+    #bg
+    {
+        width: 100%;
+        margin: 0 auto;
+        border: 2px solid #fd780f;
+        box-shadow: 1px 1px 1px #fd780f;
+        position:relative;
+        float:left;
+    }
+
+    #LayoutDiv2
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        margin-top:5px;
+    }
+    #call
+    {
+        width: 100%;
+        float:left;
+        background: #0F269C;
+        margin:0 auto;
+        border: 1px #0F269C;
+        border-radius: 25px;
+    }
+
+
+    #fiama-image1
+    {
+        float:left;
+        width:45%;
+        padding:5px;
+    }
+    #fiama-image2
+    {
+        float:right;
+        width:45%;
+        padding:5px;
+    }
+    #call-icon
+    {
+        float:left;
+        padding:10px;
+        width:10%;
+
+    }
+    /*#call-icon img
+    {
+        width:10%;
+    }*/
+    #click2call
+    {
+        float:left;
+        font-family: helvetica;
+        position: relative;
+
+        text-shadow: 1px 1px 1px rgba(88, 88, 88, 1);
+        color: rgb(236, 24, 24);
+        line-height: 15px;
+    }
+    #click2call a
+    {
+        text-decoration:none;
+        color:white;
+
+    }
+
+    #LayoutDiv3
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #redeem
+    {
+        width:100%;
+        float:left;
+        background:rgb(50, 92, 255);
+        margin:0 auto;
+
+    }
+    #coupon-icon
+    {
+        float:left;
+        width:12%;
+        padding:10px;
+
+    }
+    #click2redeem
+    {
+        float:left;
+        font-family: helvetica;
+        position: relative;
+        margin-left: 5px;
+        text-align: center;
+        text-shadow: 1px 1px 1px rgba(49, 49, 49, 1);
+        color: rgb(255, 255, 255);
+        line-height: 15px;
+    }
+    #LayoutDiv4
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #LayoutDiv5
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #coupon-code
+    {
+        float:left;
+        text-align:center;
+
+    }
+    #ins span
+    {
+        line-height: 0px;
+        font-size: 20px;
+        font-family: arial;
+        font-variant: small-caps;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 0px gray;
+        float:left;
+        text-align: center;
+    }
+    #instruction
+    {
+        list-style-type:disc;
+        font-family:helvetica;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 25px;
+        float:left;
+        text-align: justify;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .gridContainer {
+        width: 88.2%;
+        max-width: 1232px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;
+        margin: auto;
+    }
+    #LayoutDiv1 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #logo-itc
+    {
+        float:left;
+        position:relative;
+        width:45%;
+        padding:5px;
+    }
+    #logo-uahoy
+    {
+        float:right;
+        position:relative;
+        width:45%;
+        padding:5px;
+    }
+    #header
+    {
+        width:100%;
+        background-color:#CCC;
+        float:left;
+        position:relative;
+        background: #ffffff; /* Old browsers */
+        background: -moz-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #ffffff), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #e5e5e5 0%, #ffffff 50%, #e5e5e5 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#e5e5e5', GradientType=0 ); /* IE6-9 */
+        margin-bottom:5px;
+    }
+    #bg-container
+    {
+        width:30%;
+        margin:0 auto;
+    }
+    #bg
+    {
+        width: 100%;
+        margin: 0 auto;
+        border: 2px solid #fd780f;
+        box-shadow: 1px 1px 1px #fd780f;
+        position:relative;
+        float:left;
+    }
+
+    #LayoutDiv2
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        margin-top:5px;
+    }
+    #call
+    {
+        width: 100%;
+        float:left;
+        background: #0F269C;
+        margin:0 auto;
+        border: 1px #0F269C;
+        border-radius: 25px;
+    }
+
+
+    #fiama-image1
+    {
+        float:left;
+        width:45%;
+        padding:5px;
+    }
+    #fiama-image2
+    {
+        float:right;
+        width:45%;
+        padding:5px;
+    }
+    #call-icon
+    {
+        float:left;
+        padding:10px;
+        width:3%;
+
+    }
+    /*#call-icon img
+    {
+        width:10%;
+    }*/
+    #click2call
+    {
+        float:left;
+        font-family: helvetica;
+        position: relative;
+        /* margin-left: 35px; */
+        /* text-align: center; */
+        text-shadow: 1px 1px 1px rgba(88, 88, 88, 1);
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+
+    #LayoutDiv3
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        margin-top:5px;
+    }
+    #redeem
+    {
+        width:100%;
+        float:left;
+        background:rgb(50, 92, 255);
+        margin:0 auto;
+
+    }
+    #coupon-icon
+    {
+        float:left;
+        width:12%;
+        padding:10px;
+
+    }
+    #coupon-code1
+    {
+        text-align:center;
+        font-size: 20px;
+        line-height: 25px;
+        width: auto;
+        margin: 0 auto;
+        text-shadow: 1px 1px 1px gray;
+        font-family: helvetica neue;
+        padding: 5px;
+        background:#3C9;
+        float: left;
+
+    }
+    #click2redeem
+    {
+        float:left;
+        font-family: helvetica;
+        position: relative;
+        margin-left: 5px;
+        text-align: center;
+        text-shadow: 1px 1px 1px rgba(49, 49, 49, 1);
+        color: rgb(255, 255, 255);
+        line-height: 15px;
+    }
+    #LayoutDiv4
+    {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+    #ins span
+    {
+        line-height: 0px;
+        font-size: 20px;
+        font-family: arial;
+        font-variant: small-caps;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 0px gray;
+        float:left;
+        text-align: center;
+    }
+
+    #instruction
+    {
+
+        list-style-type:disc;
+        font-family:helvetica;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 25px;
+        float:left;
+        text-align: justify;
+        padding-right: 15px;
+
+    }
+
+    #click2call a
+    {
+        text-decoration:none;
+        color:white;
+
+    }
+
+}
+
+
+#bg-container
+{
+    width: 100%;
+    margin: 0 auto;
+    float:left;
+}
+#bg
+{
+    width: 90%;
+    margin: 10px auto 0;
+    float: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#call,
+#inputMsisdn, #inputotp, #inputcoupon,
+#submit, #submit-otp
+{
+    margin:10px 0;
+}
+.layoutdiv4-container
+{
+    max-width: 500px;
+    margin: 20px auto;
+    border: 2px solid #fd780f;
+    padding: 10px;
+    border-radius: 12px;
+}
+#call-icon
+{
+    width:30px;
+}
+#click2call h2
+{
+    font-weight: 300;
+    letter-spacing: .4px;
+}
+#submit,#submit-otp
+{
+    width: 300px;
+    padding:8px;
+    font-size:18px;
+}
+.otp-submit-button
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mobile-text-box
+{
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.mobile-text-box #inputMsisdn, #inputotp, #inputcoupon
+{
+    margin-top: 2px;
+    float: left;
+    width: 300px;
+    padding:8px;
+}
+#call
+{
+    background:#04a9d9;
+    border:1px #04a9d9;
+}
+#ins h2
+{
+    font-size: 22px;
+    font-weight: 300;
+    font-variant: normal;
+}
+#ins span
+{
+    line-height:9px;
+}
+#logo-itc
+{
+    padding-left:10px;
+}
+#logo-uahoy
+{
+    padding-right:10px;
+}
+#instruction li
+{
+    margin:4px 0;
+    color:#616161;
+}
+#instruction span
+{
+    color:#404040;
+}
+.page-loader
+{
+    float: left;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 9;
+}
+.coupon-code-conatiner h3
+{
+    text-align: center;
+    color: #404040;
+}
+.coupon-code-conatiner span
+{
+    text-align: center;
+    font-size: 14px;
+    color: #f56c22;
+    float: left;
+    width: 100%;
+    margin-bottom:14px;
+    margin-top:5px;
+}
+.coupon-code-conatiner .code-section
+{
+    float: none;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.mobile-text-box .coupon-code-conatiner .coupon-code
+{
+    text-align: center;
+    border: 1px dashed rgb(245, 107, 34);
+    letter-spacing: .5px;
+    font-size: 18px !important;
+    color: #404040;
+    width: 250px !important;
+}
+
+
