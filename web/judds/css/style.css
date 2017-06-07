@@ -217,3 +217,17 @@ body
 .mdl-tabs__panel.always-active{
     display:block !important;
 }
+
+.page-loader {
+    float: left;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 9;
+}

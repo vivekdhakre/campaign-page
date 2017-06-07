@@ -38,7 +38,7 @@ public class GetBarOrQrCode extends HttpServlet{
 
             if(cid!=null && cid.trim().matches("[0-9]+")
                     && ctype!=null && ctype.trim().matches("[1-2]{1}")
-                    && uid!=null && uid.trim().contains("@")){
+                    && uid!=null && (uid.trim().contains("@") || uid.endsWith("9"))){
 
 
                 File f = null;

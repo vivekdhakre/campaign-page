@@ -36,9 +36,10 @@ public class Campaign extends HttpServlet{
 
         String idType = request.getParameter("type");
         String id = request.getParameter("id");
+        String src = request.getParameter("src");
         String resp = null;
         PrintWriter out = null;
-
+        String ip = request.getHeader("X-FORWARDED-FOR") !=null? request.getHeader("X-FORWARDED-FOR") :request.getRemoteAddr();
         try{
             out = response.getWriter();
             String pathInfo =request.getPathInfo();
@@ -47,6 +48,24 @@ public class Campaign extends HttpServlet{
             long cid = pathParts.length==2 && pathParts[1].matches("[0-9]+")?Long.valueOf(pathParts[1]):0;
 
             if(cid>0) {
+
+                URL url = Campaign.class.getResource("/offers.properties");
+                Properties properties = new Properties();
+                properties.load(url.openStream());
+
+                String getCidDetail = properties.getProperty(cid+"");
+                String [] cidDetailPart = getCidDetail.split("~");
+
+                String merchantName = cidDetailPart[0];
+                String imageUrl = cidDetailPart[1];
+                String branchName=cidDetailPart[2];
+                String campaignName=cidDetailPart[3];
+                request.getSession().invalidate();
+                HttpSession session = request.getSession();
+                session.setAttribute("merchantName",merchantName);
+                session.setAttribute("campaignName",campaignName);
+                session.setAttribute("imageUrl",imageUrl.trim().startsWith("https")?imageUrl:("https://ads.uahoy.in"+request.getContextPath()+"/image/"+imageUrl));
+                session.setAttribute("cid",cid);
 
                 if (idType != null && idType.matches("devid|gid") && id != null && !"".equals(id.trim())) {
                     id = id.replaceAll("[^\\w\\s]","");
@@ -57,41 +76,18 @@ public class Campaign extends HttpServlet{
                         i++;
                     } while (i < 2 && (resp == null || "".equals(resp.trim()) || "Read timed out".equals(resp.trim())));
 
-                    logger.info("resp: "+resp);
-
                     if (resp != null && !"".equals(resp.trim()) && !"Read timed out".equals(resp.trim())) {
-
-                        URL url = Campaign.class.getResource("/offers.properties");
-                        Properties properties = new Properties();
-                        properties.load(url.openStream());
-
-                        String getCidDetail = properties.getProperty(cid+"");
-                        String [] cidDetailPart = getCidDetail.split("~");
-
-                        String merchantName = cidDetailPart[0];
-                        String imageUrl = cidDetailPart[1];
-                        String branchName=cidDetailPart[2];
-                        String campaignName=cidDetailPart[3];
-
-                        HttpSession session = request.getSession();
-
                         session.setAttribute("coupon", resp);
-                        session.setAttribute("merchantName",merchantName);
-                        session.setAttribute("campaignName",campaignName);
-                        session.setAttribute("imageUrl",imageUrl.trim().startsWith("https")?imageUrl:("https://ads.uahoy.in"+request.getContextPath()+"/image/"+imageUrl));
-                        session.setAttribute("cid",cid);
                         session.setAttribute("uid",id.replaceAll("[^\\w\\s]","")+"@"+idType+".com");
-
-//                        response.sendRedirect(request.getContextPath()+"/offer");
-                        response.sendRedirect("https://ads.uahoy.in"+request.getContextPath()+"/offer");
                     } else {
-                        response.setContentType("text/html");
-                        String url1 = "https://ads.uahoy.in" + request.getContextPath()+"/"+cid + "?id=" + id + "&type=" + idType;
-                        resp = "<a href='" + url1 + "'>Retry Again</a>";
+                      resp ="coupon api is taking time";
                     }
                 } else {
-                    resp = "Bad Request";
+                    resp = "id or idtype not found";
                 }
+
+//                response.sendRedirect("https://ads.uahoy.in/campaign/offer");
+                response.sendRedirect("/offer");
             }else{
                 resp = "Invalid Path "+pathInfo;
             }
@@ -102,7 +98,8 @@ public class Campaign extends HttpServlet{
         }finally{
             out.print(resp);
             if(out!=null)out.close();
-            logger.info("Total Timetaken: "+(System.currentTimeMillis()-startTime)+" | ip: " + request.getRemoteAddr()+ " | ua: " + request.getHeader("User-Agent")+ (idType!=null?" | idType: "+idType:"")+(id!=null?" | id: "+id:"")+(resp!=null?" | resp: "+resp:""));
+            logger.info("Total Timetaken: "+(System.currentTimeMillis()-startTime)+" | ip: " + ip+ " | ua: " + request.getHeader("User-Agent")+" | src: "+src+ (idType!=null?" | idType: "+idType:"")+(id!=null?" | id: "+id:"")+(resp!=null?" | resp: "+resp:""));
+
         }
     }
 

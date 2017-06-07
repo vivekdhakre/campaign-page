@@ -89,7 +89,6 @@ public class SendOtp extends HttpServlet{
 
             String msgpushAPI = properties.getProperty("MSG_PUSH_API")
                     .replace("<MESSAGE>",URLEncoder.encode(msg,"UTF-8"))
-                    .replace("<CLI>", properties.getProperty(cid).split("~")[0])
                     .replace("<MSISDN>",msisdn);
 
             resp = Utility.processURL(msgpushAPI);

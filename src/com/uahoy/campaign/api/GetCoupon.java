@@ -56,10 +56,14 @@ public class GetCoupon extends HttpServlet{
                         String coupon = Utility.processURL(couponUrl);
 
                         resp = coupon;
-                        if(coupon!=null && coupon.trim().length()==10) {
-                            msgPushResponse = this.msgCoupon(msisdn, coupon, cid);
-                            request.getSession().invalidate();
-                        }
+//                        if(coupon!=null && coupon.trim().length()==10) {
+//                            msgPushResponse = this.msgCoupon(msisdn, coupon, cid);
+//                            request.getSession().invalidate();
+                            javax.servlet.http.HttpSession hs = request.getSession();
+                            hs.setAttribute("coupon",resp);
+                            hs.setAttribute("uid",msisdn+"9");
+
+//                        }
                     }else{
                         resp = Response.Status.BAD_REQUEST.getStatusCode()+"";
                     }
