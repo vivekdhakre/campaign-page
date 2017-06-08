@@ -167,8 +167,8 @@
 </head>
 <body>
 <%
-    String cid = (String)session.getAttribute("cid");
-    if(cid !=null && !cid.equals("") && Long.valueOf(cid)>0 ){
+    String cid = session.getAttribute("cid")!=null?session.getAttribute("cid").toString():null;
+    if(cid !=null && cid.trim().matches("[0-9]+")&& Long.valueOf(cid)>0 ){
 %>
 
 <div class="mdl-layout__container">
@@ -198,6 +198,7 @@
                     <a href="#coupon-0" style="display:${coupon ne null && coupon.length() ne 10 ? 'none':'block'}" class="mdl-tabs__tab is-active">Text</a>
                     <a href="#coupon-1" style="display:${coupon ne null && coupon.length() ne 10 ? 'none':'block'}" class="mdl-tabs__tab">Barcode</a>
                     <a href="#coupon-2" style="display:${coupon ne null && coupon.length() ne 10 ? 'none':'block'}" class="mdl-tabs__tab">QR Code</a>
+                    <a href="#tandc" class="mdl-tabs__tab">T&C</a>
                 </div>
                 <div class="mdl-tabs__panel is-active" id="coupon-0">
                     <div class="coupon-code-container">
@@ -223,7 +224,7 @@
                             </div>
                             <div class="code-section">
                                 <h3 class="coupon-code" style="padding:5px 0;">
-                                    <img src="https://ads.uahoy.in/campaign/bar?ctype=1" width="100%"/>
+                                    <img src="https://ads.uahoy.in/campaign/bar.png?ctype=1" width="100%"/>
                                 </h3>
                             </div>
                             <a class="button save-btn" href="https://ads.uahoy.in/campaign/bar.png?ctype=1"  id="save-btn-1" download>Save Coupon</a>
@@ -245,13 +246,24 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mdl-tabs__panel" id="tandc">
+                    <ul>
+                        <li>Show Coupon Code (wherever provided) to avail the Offer</li>
+                        <li>Can't be combined with any other existing offers/ promotions</li>
+                        <li>Only one Coupon applies for a Mobile Number /Registered User</li>
+                        <li>Coupon Code is Non Transferable and can be consumed once only</li>
+                        <li>Deal provider reserves the rights to Alter/Stop the Offer at any time. You are advised to Kindly Call & Check the outlet before availing the coupon.</li>
+                        <li>Ahoy can't be held responsible, if the Coupon can't be availed because of any reason.</li>
+                        <li>Coupon can be redeemed at any Big Bazaar, Spencer</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="mdl-grid" id="input-form-div">
                 <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp">
                     <div class="mdl-grid">
                         <div class="mdl-cell mdl-cell--12-col">
-                            <span class="mdl-textfield mdl-textfield--full-width">Enter Mobile No to Get Coupon</span>
                             <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield mdl-textfield--floating-label">
                                 <input class="mdl-textfield__input" type="text" id="inputMsisdn" onkeyup="numeric(this)">
                                 <label class="mdl-textfield__label" for="inputMsisdn">Enter Mobile Number</label>
@@ -278,7 +290,7 @@
 
 <%
     }else{
-        out.println("Invalid Request");
+        out.println("Session Expired or invalid");
     }
 %>
 
