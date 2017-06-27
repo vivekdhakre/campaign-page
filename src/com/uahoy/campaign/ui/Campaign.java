@@ -47,7 +47,8 @@ public class Campaign extends HttpServlet{
 
             long cid = pathParts.length==2 && pathParts[1].matches("[0-9]+")?Long.valueOf(pathParts[1]):0;
 
-            if(cid>0) {
+            if(cid>0) {       
+                
 
                 URL url = Campaign.class.getResource("/offers.properties");
                 Properties properties = new Properties();
@@ -66,6 +67,9 @@ public class Campaign extends HttpServlet{
                 session.setAttribute("campaignName",campaignName);
                 session.setAttribute("imageUrl",imageUrl.trim().startsWith("https")?imageUrl:("https://ads.uahoy.in"+request.getContextPath()+"/image/"+imageUrl));
                 session.setAttribute("cid",cid);
+                
+                String serverPath = Utility.getServerPath(request);
+                session.setAttribute("serverPath", serverPath);
 
                 if (idType != null && idType.matches("devid|gid") && id != null && !"".equals(id.trim())) {
                     id = id.replaceAll("[^\\w\\s]","");
@@ -86,8 +90,8 @@ public class Campaign extends HttpServlet{
                     resp = "id or idtype not found";
                 }
 
-//                response.sendRedirect("https://ads.uahoy.in/campaign/offer");
-                response.sendRedirect("/offer");
+                response.sendRedirect(serverPath+"/offer");
+                
             }else{
                 resp = "Invalid Path "+pathInfo;
             }

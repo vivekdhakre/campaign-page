@@ -21,7 +21,7 @@ import java.net.URLEncoder;
  * Created by ahoy on 12/5/17.
  */
 
-@WebServlet({"/bar.png","/qr.png"})
+@WebServlet({"/bar/*","/qr/*"})
 public class GetBarOrQrCode extends HttpServlet{
 
     private static Logger logger = LoggerFactory.getLogger(GetBarOrQrCode.class);

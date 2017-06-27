@@ -1,8 +1,8 @@
 package com.uahoy.campaign.api;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
+
 import com.uahoy.campaign.util.GetStackElements;
-import com.uahoy.campaign.util.Utility;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.util.Enumeration;
-import java.util.UUID;
+
 
 /**
  * Created by rtbkit on 16/3/17.

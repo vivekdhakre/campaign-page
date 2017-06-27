@@ -8,6 +8,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.security.SecureRandom;
+
+import javax.servlet.http.HttpServletRequest;
+
 import java.net.HttpURLConnection;
 
 /**
@@ -17,6 +20,12 @@ public class Utility {
 
     private static Logger logger = LoggerFactory.getLogger(Utility.class);
 
+    public static String serverPath = "http://localhost:8080";
+//    public static String serverPath = "https://ads.uahoy.in";
+    
+    public static String getServerPath(HttpServletRequest request) {
+    	return serverPath+request.getContextPath();
+    }
 
     public static String getOtp(int size) {
 

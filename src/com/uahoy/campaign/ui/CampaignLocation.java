@@ -54,8 +54,15 @@ public class CampaignLocation extends HttpServlet{
                         i++;
                     } while (i < 2 && (resp == null || "".equals(resp.trim()) || "Read timed out".equals(resp.trim())));
 
+                    HttpSession session = request.getSession();
+                    
+                    String serverPath = Utility.getServerPath(request);
+                    session.setAttribute("serverPath", serverPath);
+                    
                     if (resp != null && !"".equals(resp.trim()) && !"Read timed out".equals(resp.trim())) {
 
+                    	
+                    	
                         URL url = CampaignLocation.class.getResource("/offers.properties");
                         Properties properties = new Properties();
                         properties.load(url.openStream());
@@ -68,21 +75,20 @@ public class CampaignLocation extends HttpServlet{
                         //String branchName=cidDetailPart[2];
                         String campaignName=cidDetailPart[3];
                         String mid = cidDetailPart[4];
-
-                        HttpSession session = request.getSession();
+                       
 
                         session.setAttribute("coupon", resp);
                         session.setAttribute("merchantName",merchantName);
                         session.setAttribute("campaignName",campaignName);
                         session.setAttribute("imageUrl",imageUrl.startsWith("https")?imageUrl:("https://ads.uahoy.in"+request.getContextPath()+"/image/"+imageUrl));
                         session.setAttribute("cid",cid);
-                        session.setAttribute("mid",mid);
-//                        session.setAttribute("uid",id+"@"+idType+".com");
-
-                        response.sendRedirect("https://ads.uahoy.in"+request.getContextPath()+"/bo");
+                        session.setAttribute("mid",mid);//                      
+                        session.setAttribute("uid",id.replaceAll("[^\\w\\s]","")+"@"+idType+".com");
+//                        
+                        response.sendRedirect(serverPath+"/bo");
                     } else {
                         response.setContentType("text/html");
-                        String url1 = "https://ads.uahoy.in" + request.getContextPath()+"/"+cid + "?id=" + id + "&type=" + idType;
+                        String url1 = serverPath+"/"+cid + "?id=" + id + "&type=" + idType;
                         resp = "<a href='" + url1 + "'>Retry Again</a>";
                     }
                 } else {
