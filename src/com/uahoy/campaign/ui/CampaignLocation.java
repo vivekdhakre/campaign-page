@@ -45,59 +45,61 @@ public class CampaignLocation extends HttpServlet{
 
             if(cid>0) {
 
-                if (idType != null && idType.matches("devid|gid") && id != null && !"".equals(id.trim())) {
+//                if (idType != null && idType.matches("devid|gid") && id != null && !"".equals(id.trim())) {
 
-                    String api = "http://uahoy.com/mobilecoupon/getcpnbyid?cid=" + cid + "&idtype=" + idType + "&id=" + id;
-                    int i = 0;
-                    do {
-                        resp = Utility.processURL(api);
-                        i++;
-                    } while (i < 2 && (resp == null || "".equals(resp.trim()) || "Read timed out".equals(resp.trim())));
+                URL url = CampaignLocation.class.getResource("/offers.properties");
+                Properties properties = new Properties();
+                properties.load(url.openStream());
 
+                String getCidDetail = properties.getProperty(cid+"");
+
+                if(getCidDetail!=null && !"".equals(getCidDetail.trim())) {
+                    request.getSession().invalidate();
                     HttpSession session = request.getSession();
-                    
+
                     String serverPath = Utility.getServerPath(request);
                     session.setAttribute("serverPath", serverPath);
-                    
-                    if (resp != null && !"".equals(resp.trim()) && !"Read timed out".equals(resp.trim())) {
 
-                    	
-                    	
-                        URL url = CampaignLocation.class.getResource("/offers.properties");
-                        Properties properties = new Properties();
-                        properties.load(url.openStream());
+                    String [] cidDetailPart = getCidDetail.split("~");
 
-                        String getCidDetail = properties.getProperty(cid+"");
-                        String [] cidDetailPart = getCidDetail.split("~");
+                    String merchantName = cidDetailPart[0];
+                    String imageUrl = cidDetailPart[1];
+                    String campaignName=cidDetailPart[3];
+                    String mid = cidDetailPart[4];
 
-                        String merchantName = cidDetailPart[0];
-                        String imageUrl = cidDetailPart[1];
-                        //String branchName=cidDetailPart[2];
-                        String campaignName=cidDetailPart[3];
-                        String mid = cidDetailPart[4];
-                       
 
-                        session.setAttribute("coupon", resp);
-                        session.setAttribute("merchantName",merchantName);
-                        session.setAttribute("campaignName",campaignName);
-                        session.setAttribute("imageUrl",imageUrl.startsWith("https")?imageUrl:("https://ads.uahoy.in"+request.getContextPath()+"/image/"+imageUrl));
-                        session.setAttribute("cid",cid);
-                        session.setAttribute("mid",mid);//                      
-                        session.setAttribute("uid",id.replaceAll("[^\\w\\s]","")+"@"+idType+".com");
-//                        
-                        response.sendRedirect(serverPath+"/bo");
-                    } else {
-                        response.setContentType("text/html");
-                        String url1 = serverPath+"/"+cid + "?id=" + id + "&type=" + idType;
-                        resp = "<a href='" + url1 + "'>Retry Again</a>";
+                    session.setAttribute("merchantName",merchantName);
+                    session.setAttribute("campaignName",campaignName);
+                    session.setAttribute("imageUrl",imageUrl.startsWith("https")?imageUrl:("https://ads.uahoy.in"+request.getContextPath()+"/image/"+imageUrl));
+                    session.setAttribute("cid",cid);
+                    session.setAttribute("mid",mid);
+
+                    if (idType != null && idType.matches("devid|gid") && id != null && !"".equals(id.trim())) {
+                        String api = "http://uahoy.com/mobilecoupon/getcpnbyid?cid=" + cid + "&idtype=" + idType + "&id=" + id;
+                        int i = 0;
+                        do {
+                            resp = Utility.processURL(api);
+                            i++;
+                        } while (i < 2 && (resp == null || "".equals(resp.trim()) || "Read timed out".equals(resp.trim())));
+
+                        if (resp != null && !"".equals(resp.trim()) && !"Read timed out".equals(resp.trim())) {
+                            session.setAttribute("coupon", resp);
+                            session.setAttribute("uid",id.replaceAll("[^\\w\\s]","")+"@"+idType+".com");
+                        } else {
+                            resp ="coupon api is taking time";
+                        }
+                    }else {
+                        resp = "something mismatched";
                     }
-                } else {
-                    resp = "Bad Request";
-                }
-            }else{
-                resp = "Invalid Path "+pathInfo;
-            }
 
+                    response.sendRedirect(serverPath+"/bo/"+cid);
+
+                }else {
+                    resp = "cid is not configured";
+                }
+            } else {
+                resp = "Bad Request";
+            }
         }catch(Exception e){
             resp = "Internal Error";
             logger.error(GetStackElements.getRootCause(e,getClass().getName()));

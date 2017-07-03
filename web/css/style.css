@@ -1,0 +1,146 @@
+.deal-title {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    font-size: 14px;
+    padding: 10px;
+    left: 0;
+    right: 0;
+    line-height: 22px;
+    color: #5f5f5f;
+}
+
+.card.offer-card {
+    margin: 0
+}
+
+.parallax-container {
+    height: 300px;
+}
+
+.card.offer-card .card-content {
+    float: left;
+    width: 100%;
+}
+
+.coupon-container canvas,
+.coupon-container img {
+    margin: 0 auto;
+}
+
+.coupon-container img#barcode {
+    max-width: 250px;
+    width: 100%;
+}
+
+.coupon-container img#qrcode {
+    width: 100%;
+    max-width: 130px;
+    margin: -20px auto;
+}
+
+.coupon-container {
+    position: relative;
+    float: left;
+    width: 100%;
+    border: 1px dashed #26a69a;
+    padding: 20px;
+    margin: 5px 0 15px;
+}
+
+.coupon-container::after {
+    position: absolute;
+    content: "Your Unique Code";
+    top: -10px;
+    left: 0;
+    background: white;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #26a69a;
+}
+
+.coupon-container.coupon-expired::after {
+    content: "" !important;
+}
+
+.select-wrapper input.select-dropdown {
+    color: #9e9e9e;
+}
+
+.coupon {
+    display: none;
+}
+
+.coupon.active {
+    display: block;
+}
+
+.size-12 {
+    font-size: 12px;
+}
+
+.size-14 {
+    font-size: 14px;
+}
+
+.size-16 {
+    font-size: 16px;
+}
+
+.city-list ul.collection {
+    border: none;
+    float: left;
+    width: 100%;
+}
+
+.city-list ul.collection .collection-item.avatar {
+    width: 100%;
+}
+
+.city-list-title {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: #656565;
+}
+
+.condition.collection {
+    border: none;
+    overflow: inherit;
+    list-style-type: decimal !important;
+}
+
+.condition.collection li.collection-item {
+    list-style-type: decimal !important;
+}
+
+.loader-container {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.20);
+}
+
+.loader-wrapper {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active {
+    display: flex;
+}

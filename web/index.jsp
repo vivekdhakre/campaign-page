@@ -224,10 +224,11 @@
                             </div>
                             <div class="code-section">
                                 <h3 class="coupon-code" style="padding:5px 0;">
-                                    <img src="https://ads.uahoy.in/campaign/bar.png?ctype=1" width="100%"/>
+                                    <img src="${serverPath}/bar/${coupon}.png?ctype=1" width="100%"/>
                                 </h3>
                             </div>
-                            <a class="button save-btn" href="https://ads.uahoy.in/campaign/bar.png?ctype=1"  id="save-btn-1" download>Save Coupon</a>
+                            <a class="button save-btn" href="${serverPath}/bar/${coupon}.png?ctype=1" id="save-btn-1"
+                               download>Save Coupon</a>
                         </div>
                     </div>
                 </div>
@@ -239,10 +240,11 @@
                             </div>
                             <div class="code-section">
                                 <h3 class="coupon-code">
-                                    <img src="https://ads.uahoy.in/campaign/qr.png?ctype=2" width="100%"/>
+                                    <img src="${serverPath}/qr/${coupon}.png?ctype=2" width="100%"/>
                                 </h3>
                             </div>
-                            <a class="button save-btn" href="https://ads.uahoy.in/campaign/qr.png?ctype=2"  id="save-btn-2"  download>Save Coupon</a>
+                            <a class="button save-btn" href="${serverPath}/qr/${coupon}.png?ctype=2" id="save-btn-2"
+                               download>Save Coupon</a>
                         </div>
                     </div>
                 </div>
